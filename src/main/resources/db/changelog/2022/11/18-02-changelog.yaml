@@ -1,0 +1,75 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1668785648926-1
+      author: shamsulazeem (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_feature
+                  name: name
+                  type: VARCHAR(255)
+            tableName: feature
+  - changeSet:
+      id: 1668785648926-3
+      author: shamsulazeem (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                  name: feature_name
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: username
+                  type: VARCHAR_IGNORECASE(50)
+            tableName: user_feature_mapping
+  - changeSet:
+      id: 1668785648926-5
+      author: shamsulazeem (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addPrimaryKey:
+            columnNames: username, feature_name
+            constraintName: pk_user_feature_mapping
+            tableName: user_feature_mapping
+  - changeSet:
+      id: 1668785648926-7
+      author: shamsulazeem (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addUniqueConstraint:
+            columnNames: name
+            constraintName: uc_feature_name
+            tableName: feature
+  - changeSet:
+      id: 1668785648926-9
+      author: shamsulazeem (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: feature_name
+            baseTableName: user_feature_mapping
+            constraintName: FK_USER_FEATURE_MAPPING_ON_FEATURE_NAME
+            referencedColumnNames: name
+            referencedTableName: feature
+  - changeSet:
+      id: 1668785648926-10
+      author: shamsulazeem (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: username
+            baseTableName: user_feature_mapping
+            constraintName: FK_USER_FEATURE_MAPPING_ON_USERNAME
+            referencedColumnNames: username
+            referencedTableName: users
+

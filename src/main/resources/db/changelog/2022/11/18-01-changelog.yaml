@@ -1,0 +1,83 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1668736475203-1
+      author: shamsulazeem (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                  name: USERNAME
+                  type: VARCHAR_IGNORECASE(50)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: AUTHORITY
+                  type: VARCHAR_IGNORECASE(50)
+            tableName: AUTHORITIES
+  - changeSet:
+      id: 1668736475203-2
+      author: shamsulazeem (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: CONSTRAINT_4
+                  name: USERNAME
+                  type: VARCHAR_IGNORECASE(50)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: PASSWORD
+                  type: VARCHAR_IGNORECASE(500)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: ENABLED
+                  type: BOOLEAN
+            tableName: USERS
+  - changeSet:
+      id: 1668736475203-3
+      author: shamsulazeem (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createIndex:
+            columns:
+              - column:
+                  name: USERNAME
+            indexName: FK_AUTHORITIES_USERS_INDEX_A
+            tableName: AUTHORITIES
+  - changeSet:
+      id: 1668736475203-4
+      author: shamsulazeem (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createIndex:
+            columns:
+              - column:
+                  name: USERNAME
+              - column:
+                  name: AUTHORITY
+            indexName: IX_AUTH_USERNAME
+            tableName: AUTHORITIES
+            unique: true
+  - changeSet:
+      id: 1668736475203-5
+      author: shamsulazeem (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: USERNAME
+            baseTableName: AUTHORITIES
+            constraintName: FK_AUTHORITIES_USERS
+            onDelete: RESTRICT
+            onUpdate: RESTRICT
+            referencedColumnNames: USERNAME
+            referencedTableName: USERS
+

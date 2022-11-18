@@ -1,0 +1,24 @@
+spring:
+  main:
+    web-application-type: servlet
+  datasource:
+    url: ${ASSESSMENT_DATABASE_URL:jdbc:h2:file:./data/money-lion-assessment}
+    username: sa
+    password: password
+    driverClassName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console.enabled: true
+
+  # For live reloads
+  devtools:
+    restart:
+      poll-interval: 2s
+      quiet-period: 1s
+
+settings:
+  user:
+    admin-user: shams
+    admin-password: password
+    admin-role: ADMIN
