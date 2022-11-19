@@ -39,7 +39,7 @@ public class SecurityConfig extends VaadinWebSecurity {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.userDetailsService(jdbcUserDetailsManager()).authorizeRequests();
+        http.userDetailsService(jdbcUserDetailsManager());
         super.configure(http);
         setLoginView(http, Login.class, "/logout");
     }

@@ -20,6 +20,9 @@ public class User {
     @Column(name = "USERNAME", columnDefinition = "VARCHAR_IGNORECASE(50) not null")
     private String username;
 
+    @Column(name = "PASSWORD", columnDefinition = "VARCHAR_IGNORECASE(500) not null")
+    private String password;
+
     @NotNull
     @Column(name = "ENABLED", nullable = false)
     private Boolean enabled = false;
