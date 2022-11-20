@@ -1,14 +1,41 @@
-# MoneyLion Assessment
+# 0. MoneyLion Assessment
 This is an implementation of an assessment requested for a particular job application role. 
 This repository is also created for acting as a template for future projects and will continue and maintained for development
 purpose. Please feel free to use each section of this template for your future spring boot projects.
 
-#### Demos
+#### 0.1 Demos
 - [API Demo](https://github.com/ShamsUlAzeem/MoneyLionAssessmentEndToEnd#51-api-based)
 - [UI Demo](https://github.com/ShamsUlAzeem/MoneyLionAssessmentEndToEnd#52-ui-based)
-- [Online UI]()
-- [API Docs]()
+- [Online UI](http://ec2-54-209-42-177.compute-1.amazonaws.com:9090)
+- [API Docs and Client Generators](https://editor.swagger.io/?url=https://raw.githubusercontent.com/ShamsUlAzeem/MoneyLionAssessmentEndToEnd/master/open-api-specification.yaml)
 - [OpenAPI YAML Specifications](open-api-specification.yaml)
+- [Download Pre-Release](https://github.com/ShamsUlAzeem/MoneyLionAssessmentEndToEnd/releases/download/v0.0.1/Assessment-0.0.1-SNAPSHOT.jar) *(Required Java 11)* Run by executing `java -jar Assessment-0.0.1-SNAPSHOT.jar` and navigate to http://localhost:8080. Later in the future, I will create native binaries without the need to install Java Development Kit or runtime
+
+#### 0.2 Server Options
+The server can be configured through the following options
+
+##### 0.2.1 Port
+For running on a different port you can use vm options, such as:
+
+`java -jar Assessment-0.0.1-SNAPSHOT.jar -Dserver.port=9090`
+
+##### 0.2.2 Database URL
+For changing database url you can either use vm options as:
+
+`java -jar Assessment-0.0.1-SNAPSHOT.jar '-Dspring.datasource.url=jdbc:h2:file:./data/money-lion-assessment'`
+
+OR
+
+Through environment variable 
+
+###### 0.2.2.1 MacOS or Linux
+`export ASSESSMENT_DATABASE_URL=jdbc:h2:file:./data/money-lion-assessment`
+
+###### 0.2.2.2 WINDOWS (CMD)
+`SET ASSESSMENT_DATABASE_URL=jdbc:h2:file:./data/money-lion-assessment`
+
+###### 0.2.2.3 Windows (Powershell)
+`$Env:ASSESSMENT_DATABASE_URL = jdbc:h2:file:./data/money-lion-assessment`
 
 # 1. Problem Statement (User Story)
 As Product Manager, I would like to manage users’ accesses to new features via feature switches, 
