@@ -3,7 +3,9 @@ This is an implementation of an assessment requested for a particular job applic
 This repository is also created for acting as a template for future projects and will continue and maintained for development
 purpose. Please feel free to use each section of this template for your future spring boot projects.
 
-#### 0.1 Demos
+![CI Status](https://github.com/ShamsUlAzeem/MoneyLionAssessmentEndToEnd/actions/workflows/tests.yml/badge.svg)
+
+#### 0.1 Artifacts
 - [API Demo](https://github.com/ShamsUlAzeem/MoneyLionAssessmentEndToEnd#51-api-based)
 - [UI Demo](https://github.com/ShamsUlAzeem/MoneyLionAssessmentEndToEnd#52-ui-based)
 - [Online UI](http://ec2-54-209-42-177.compute-1.amazonaws.com:9090)
