@@ -1,15 +1,15 @@
 openapi: 3.0.1
 info:
-  title: OpenAPI definition
-  version: v0
+  title: MoneyLion Assessment API
+  version: v0.0.1
 servers:
-- url: http://localhost:8080
-  description: Generated server url
+- url: http://ec2-13-228-30-199.ap-southeast-1.compute.amazonaws.com
+  description: Online server URL
 paths:
   /api/feature:
     get:
       tags:
-      - feature-controller
+      - Feature Controller
       operationId: canUserAccessFeature
       parameters:
       - name: email
@@ -28,10 +28,10 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                $ref: '#/components/schemas/FeatureAccessDto'
     put:
       tags:
-      - feature-controller
+      - Feature Controller
       operationId: saveFeature
       requestBody:
         content:
@@ -48,7 +48,7 @@ paths:
                 type: string
     post:
       tags:
-      - feature-controller
+      - Feature Controller
       operationId: assignFeature
       requestBody:
         content:
@@ -63,10 +63,16 @@ paths:
             '*/*':
               schema:
                 type: string
+        "304":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
   /api/user:
     post:
       tags:
-      - user-controller
+      - User Controller
       operationId: createUser
       requestBody:
         content:
@@ -84,7 +90,7 @@ paths:
   /api/auth/login:
     post:
       tags:
-      - auth-controller
+      - Authorization Controller
       operationId: login
       requestBody:
         content:
@@ -98,11 +104,11 @@ paths:
           content:
             '*/*':
               schema:
-                type: object
+                $ref: '#/components/schemas/TokenDto'
   /api/feature/{name}:
     get:
       tags:
-      - feature-controller
+      - Feature Controller
       operationId: findFeatureByName
       parameters:
       - name: name
@@ -120,7 +126,7 @@ paths:
   /api/feature/features:
     get:
       tags:
-      - feature-controller
+      - Feature Controller
       operationId: listFeatures
       responses:
         "200":
@@ -131,8 +137,22 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/FeatureDto'
+security:
+  - bearerAuth: []
 components:
+  securitySchemes:
+    bearerAuth:            # arbitrary name for the security scheme
+      type: http
+      scheme: bearer
+      bearerFormat: JWT 
   schemas:
+    TokenDto:
+      type: object
+      properties:
+        token:
+          maxLength: 255
+          minLength: 0
+          type: string
     CreateFeatureRequest:
       type: object
       properties:
@@ -180,3 +200,8 @@ components:
           maxLength: 255
           minLength: 0
           type: string
+    FeatureAccessDto:
+      type: object
+      properties:
+        canAccess:
+          type: boolean
