@@ -19,6 +19,6 @@ spring:
 
 settings:
   user:
-    admin-user: shams
+    admin-user: shams@gmail.com
     admin-password: password
     admin-role: ADMIN

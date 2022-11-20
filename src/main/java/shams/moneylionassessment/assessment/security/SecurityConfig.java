@@ -23,7 +23,7 @@ import javax.sql.DataSource;
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig extends VaadinWebSecurity {
 
-    @Value( "${settings.user.admin-username:shams}" )
+    @Value( "${settings.user.admin-username:shams@gmail.com}" )
     private String adminUsername;
 
     @Value("${settings.user.admin-password:password}")

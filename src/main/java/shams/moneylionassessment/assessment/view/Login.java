@@ -1,6 +1,9 @@
 package shams.moneylionassessment.assessment.view;
 
 import com.vaadin.flow.component.html.H1;
+import com.vaadin.flow.component.html.H3;
+import com.vaadin.flow.component.html.H4;
+import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.login.LoginForm;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.BeforeEnterEvent;
@@ -26,7 +29,10 @@ public class Login extends VerticalLayout implements BeforeEnterObserver {
         loginForm.setAction("login");
         loginForm.setForgotPasswordButtonVisible(false);
 
-        add(new H1("MoneyLion Assessment"), loginForm);
+        add(new H1("MoneyLion Assessment"), loginForm,
+                new H3("Use the following defaults:"),
+                new Label("Username: shams@gmail.com"),
+                new Label("Password: password"));
     }
 
     @Override
