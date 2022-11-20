@@ -20,6 +20,7 @@
         <vaadin.version>23.2.7</vaadin.version>
         <spring-security.version>5.7.5</spring-security.version> <!-- For fixing latest CVEs since spring boot starter 2.7.5 comes with version 5.7.4 -->
         <snakeyaml.version>1.33</snakeyaml.version> <!-- For fixing latest CVEs since spring boot starter 2.7.5 comes with version 1.30 -->
+        <jjwt.version>0.9.1</jjwt.version>
     </properties>
     <dependencies>
         <dependency>
@@ -43,7 +44,11 @@
             <artifactId>spring-native</artifactId>
             <version>${spring-native.version}</version>
         </dependency>
-
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>${jjwt.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>

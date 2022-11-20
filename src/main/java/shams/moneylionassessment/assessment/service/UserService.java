@@ -18,6 +18,16 @@ public class UserService {
         this.passwordEncoder = passwordEncoder;
     }
 
+    public User authenticate(String username, String password) {
+        User user = userRepository.findById(username).orElse(null);
+
+        if(user != null && passwordEncoder.matches(password, user.password())) {
+            return user;
+        } else {
+            return null;
+        }
+    }
+
     public boolean userExists(String username) {
         return userRepository.existsById(username);
     }
