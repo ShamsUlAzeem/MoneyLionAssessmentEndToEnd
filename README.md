@@ -1,5 +1,5 @@
 # MoneyLion Assessment
-This is an implementation of an assessment requested from MoneyLion for Senior Software Engineer job application role. 
+This is an implementation of an assessment requested for a particular job application role. 
 This repository is also created for acting as a template for future projects and will continue and maintained for development
 purpose. Please feel free to use each section of this template for your future spring boot projects.
 
