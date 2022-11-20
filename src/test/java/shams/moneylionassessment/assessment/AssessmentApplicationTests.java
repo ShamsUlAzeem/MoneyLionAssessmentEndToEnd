@@ -26,7 +26,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 class AssessmentApplicationTests {
 
     private final ObjectMapper objectMapper = new ObjectMapper();
-    private final String adminUsername = "shams"; // Todo: take this from properties file
+    private final String adminUsername = "shams@gmail.com"; // Todo: take this from properties file
     private final String adminPassword = "password"; // Todo: take this from properties file
     @Autowired
     private MockMvc mockMvc;

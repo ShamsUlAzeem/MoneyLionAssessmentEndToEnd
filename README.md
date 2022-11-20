@@ -3,6 +3,13 @@ This is an implementation of an assessment requested for a particular job applic
 This repository is also created for acting as a template for future projects and will continue and maintained for development
 purpose. Please feel free to use each section of this template for your future spring boot projects.
 
+#### Demos
+- [API Demo](https://github.com/ShamsUlAzeem/MoneyLionAssessmentEndToEnd#51-api-based)
+- [UI Demo](https://github.com/ShamsUlAzeem/MoneyLionAssessmentEndToEnd#52-ui-based)
+- [Online UI]()
+- [API Docs]()
+- [OpenAPI YAML Specifications](open-api-specification.yaml)
+
 # 1. Problem Statement (User Story)
 As Product Manager, I would like to manage users’ accesses to new features via feature switches, 
 i.e. enabling/disabling certain feature based on a user’s email and feature names).
@@ -84,21 +91,17 @@ also maintained through liquibase migration changelogs.
 ---
 # 4. Tests and Coverage
 ![img.png](test-coverage.png)
+
 # 5. Demo
 The following two demos shows how the application works in different modes
 
 ## 5.1. API Based
 ![final_637a4273b61a7005ca19ac8b_309090](https://user-images.githubusercontent.com/17789400/202912506-644d4014-9f1c-4306-b37f-f01fabdf3aa5.gif)
 
-
 ## 5.2. UI Based
 ![final_637a4273b61a7005ca19ac8b_595743](https://user-images.githubusercontent.com/17789400/202909923-76706f00-37b6-4763-a4d4-7b2e1a2406f2.gif)
 
-
-## 6. Setup and Usage Examples
-
-
-# Future Plans
+# 6. Future Plans
 Future plans includes:
 1. Maintenance of CI/CD creation of native binaries for production releases use with graalvm.
 2. API documentation through javadoc comments and source code/api exploration through GitHub pages

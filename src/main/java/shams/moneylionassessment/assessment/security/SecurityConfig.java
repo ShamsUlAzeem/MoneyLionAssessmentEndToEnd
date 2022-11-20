@@ -59,9 +59,9 @@ public class SecurityConfig extends VaadinWebSecurity {
     @Override
     public void configure(WebSecurity web) {
         web.ignoring().antMatchers(
-            "/api/auth/login",
-            "/api/user**",
-            "/api/feature**"
+                "/api/auth/login",
+                "/api/user**",
+                "/api/feature**"
         );
     }
 

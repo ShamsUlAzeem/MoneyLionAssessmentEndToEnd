@@ -21,6 +21,7 @@
         <spring-security.version>5.7.5</spring-security.version> <!-- For fixing latest CVEs since spring boot starter 2.7.5 comes with version 5.7.4 -->
         <snakeyaml.version>1.33</snakeyaml.version> <!-- For fixing latest CVEs since spring boot starter 2.7.5 comes with version 1.30 -->
         <jjwt.version>0.9.1</jjwt.version>
+        <openapi-ui-docs.version>1.6.4</openapi-ui-docs.version>
     </properties>
     <dependencies>
         <dependency>
@@ -48,6 +49,11 @@
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt</artifactId>
             <version>${jjwt.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>${openapi-ui-docs.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

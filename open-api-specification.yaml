@@ -1,0 +1,182 @@
+openapi: 3.0.1
+info:
+  title: OpenAPI definition
+  version: v0
+servers:
+- url: http://localhost:8080
+  description: Generated server url
+paths:
+  /api/feature:
+    get:
+      tags:
+      - feature-controller
+      operationId: canUserAccessFeature
+      parameters:
+      - name: email
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: featureName
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+    put:
+      tags:
+      - feature-controller
+      operationId: saveFeature
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateFeatureRequest'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+    post:
+      tags:
+      - feature-controller
+      operationId: assignFeature
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FeatureAssignRequest'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+  /api/user:
+    post:
+      tags:
+      - user-controller
+      operationId: createUser
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateUserRequest'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+  /api/auth/login:
+    post:
+      tags:
+      - auth-controller
+      operationId: login
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuthRequest'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+  /api/feature/{name}:
+    get:
+      tags:
+      - feature-controller
+      operationId: findFeatureByName
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/FeatureDto'
+  /api/feature/features:
+    get:
+      tags:
+      - feature-controller
+      operationId: listFeatures
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/FeatureDto'
+components:
+  schemas:
+    CreateFeatureRequest:
+      type: object
+      properties:
+        name:
+          maxLength: 255
+          minLength: 0
+          type: string
+    CreateUserRequest:
+      type: object
+      properties:
+        username:
+          maxLength: 50
+          minLength: 0
+          type: string
+        password:
+          maxLength: 500
+          minLength: 0
+          type: string
+    FeatureAssignRequest:
+      type: object
+      properties:
+        featureName:
+          maxLength: 255
+          minLength: 0
+          type: string
+        email:
+          maxLength: 50
+          minLength: 0
+          type: string
+        enable:
+          type: boolean
+    AuthRequest:
+      type: object
+      properties:
+        username:
+          maxLength: 50
+          minLength: 0
+          type: string
+        password:
+          type: string
+    FeatureDto:
+      type: object
+      properties:
+        name:
+          maxLength: 255
+          minLength: 0
+          type: string

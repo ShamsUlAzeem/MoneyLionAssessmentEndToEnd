@@ -22,3 +22,7 @@ settings:
     admin-user: shams@gmail.com
     admin-password: password
     admin-role: ADMIN
+
+springdoc:
+  api-docs:
+    path: /api-docs
