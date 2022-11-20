@@ -16,11 +16,11 @@ public class UserFeatureMapping {
     @EmbeddedId
     private UserFeatureId id;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne()
     @JoinColumn(name = "FEATURE_NAME", insertable = false, updatable = false)
     private Feature feature;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne()
     @JoinColumn(name = "USERNAME", insertable = false, updatable = false)
     private User user;
 }

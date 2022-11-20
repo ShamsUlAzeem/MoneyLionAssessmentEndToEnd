@@ -53,7 +53,7 @@ public class FeatureService {
     public void revokeFeature(String username, String featureName) {
         UserFeatureId userFeatureId = new UserFeatureId().username(username).featureName(featureName);
 
-        if(!userFeatureMappingRepository.existsById(userFeatureId)) {
+        if(userFeatureMappingRepository.existsById(userFeatureId)) {
             userFeatureMappingRepository.deleteById(userFeatureId);
         }
     }

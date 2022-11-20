@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import shams.moneylionassessment.assessment.data.models.User;
 import shams.moneylionassessment.assessment.data.repository.UserRepository;
 
+import java.util.List;
+
 @Service
 public class UserService {
 
@@ -20,6 +22,9 @@ public class UserService {
         return userRepository.existsById(username);
     }
 
+    public List<User> list() {
+        return userRepository.findAll();
+    }
     public User createUser(String username, String password) {
         return userRepository.save(new User().username(username).password(passwordEncoder.encode(password)).enabled(true));
     }

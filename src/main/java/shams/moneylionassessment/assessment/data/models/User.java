@@ -3,6 +3,7 @@ package shams.moneylionassessment.assessment.data.models;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
+import org.hibernate.annotations.Fetch;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -27,7 +28,7 @@ public class User {
     @Column(name = "ENABLED", nullable = false)
     private Boolean enabled = false;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "USER_FEATURE_MAPPING",
             joinColumns = @JoinColumn(name = "USERNAME"),
             inverseJoinColumns = @JoinColumn(name = "FEATURE_NAME"))
