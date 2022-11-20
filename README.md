@@ -2,8 +2,8 @@
 
 # Content
 - [0. MoneyLion Assessment](https://github.com/ShamsUlAzeem/MoneyLionAssessmentEndToEnd#0-moneylion-assessment)
-    - [0.1 Demo and Artifacts](https://github.com/ShamsUlAzeem/MoneyLionAssessmentEndToEnd#01-artifacts)
-    - [0.2 Server Configurations](https://github.com/ShamsUlAzeem/MoneyLionAssessmentEndToEnd#02-server-options)
+    - [0.1 Demo and Artifacts](https://github.com/ShamsUlAzeem/MoneyLionAssessmentEndToEnd#01-demo-and-artifacts)
+    - [0.2 Server Configurations](https://github.com/ShamsUlAzeem/MoneyLionAssessmentEndToEnd#02-server-configurations)
         - [0.2.1 Port](https://github.com/ShamsUlAzeem/MoneyLionAssessmentEndToEnd#021-port)
         - [0.2.2 Database URL](https://github.com/ShamsUlAzeem/MoneyLionAssessmentEndToEnd#022-database-url)
             - [0.2.2.1 MacOS or Linux](https://github.com/ShamsUlAzeem/MoneyLionAssessmentEndToEnd#0221-macos-or-linux)
