@@ -88,7 +88,8 @@ public class FeatureController {
         }
     }
 
-    @PostMapping("save")
+    // Should be a post endpoint based on the REST API guidelines, but it's being used by the assign/revoke feature endpoint as mentioned in the assignment
+    @PutMapping(consumes = "application/json")
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public ResponseEntity<String> saveFeature(@RequestBody CreateFeatureRequest request) {
         String name = request.getName();

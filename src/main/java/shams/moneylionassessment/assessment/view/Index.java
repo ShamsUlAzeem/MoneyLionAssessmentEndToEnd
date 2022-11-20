@@ -4,6 +4,7 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.html.H1;
+import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.html.Input;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.orderedlayout.FlexComponent;
@@ -143,8 +144,8 @@ public class Index extends VerticalLayout {
             header.setWidth("100%");
             header.addClassNames("py-0", "px-m");
 
-            VerticalLayout mainVerticalLayout = new VerticalLayout();
-            mainVerticalLayout.setWidth("50%");
+            VerticalLayout featuresVerticalLayout = new VerticalLayout();
+            featuresVerticalLayout.setWidth("50%");
             var featureGrid = new Grid<Feature>();
             featureGrid.addColumn(Feature::name, "name").setHeader("Name");
             featureGrid.setItems(featureService.list());
@@ -176,10 +177,11 @@ public class Index extends VerticalLayout {
                }
             });
 
-            mainVerticalLayout.add(new HorizontalLayout(featureNameInput, addFeatureButton), featureGrid, featureErrorLabel);
+            featuresVerticalLayout.add(new H3("Features"));
+            featuresVerticalLayout.add(new HorizontalLayout(featureNameInput, addFeatureButton), featureGrid, featureErrorLabel);
 
-            VerticalLayout verticalLayout2 = new VerticalLayout();
-            verticalLayout2.setWidth("50%");
+            VerticalLayout usersVerticalLayout = new VerticalLayout();
+            usersVerticalLayout.setWidth("50%");
             var userGrid = new Grid<User>();
             userGrid.addColumn(User::username, "username").setHeader("Username");
             userGrid.addColumn(user -> user.features().stream().map(Feature::name).collect(Collectors.joining(", ")), "features").setHeader("Accessible features");
@@ -268,9 +270,10 @@ public class Index extends VerticalLayout {
                 }
             });
 
-            verticalLayout2.add(new HorizontalLayout(usernameInput, passwordInput, addUserButton), userGrid, userErrorLabel);
+            usersVerticalLayout.add(new H3("Users"));
+            usersVerticalLayout.add(new HorizontalLayout(usernameInput, passwordInput, addUserButton), userGrid, userErrorLabel);
 
-            var grids = new HorizontalLayout(mainVerticalLayout, verticalLayout2);
+            var grids = new HorizontalLayout(featuresVerticalLayout, usersVerticalLayout);
             grids.setDefaultVerticalComponentAlignment(FlexComponent.Alignment.CENTER);
             grids.expand(logo);
             grids.setWidth("100%");

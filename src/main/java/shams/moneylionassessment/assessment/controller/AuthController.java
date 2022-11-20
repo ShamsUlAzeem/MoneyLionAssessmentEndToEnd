@@ -31,7 +31,7 @@ public class AuthController {
     }
 
     @PostMapping("login")
-    public ResponseEntity<TokenDto> login(@RequestBody @Valid AuthRequest request) {
+    public ResponseEntity<Object> login(@RequestBody @Valid AuthRequest request) {
         try {
             User user = userService.authenticate(request.getUsername(), request.getPassword());
 
@@ -41,7 +41,7 @@ public class AuthController {
                 throw new BadCredentialsException("Invalid username or password");
             }
         } catch (BadCredentialsException ex) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(ex.getMessage());
         }
     }
 
