@@ -88,8 +88,11 @@ also maintained through liquibase migration changelogs.
 The following two demos shows how the application works in different modes
 
 ## 5.1. API Based
+![final_637a4273b61a7005ca19ac8b_309090](https://user-images.githubusercontent.com/17789400/202912506-644d4014-9f1c-4306-b37f-f01fabdf3aa5.gif)
+
 
 ## 5.2. UI Based
+![final_637a4273b61a7005ca19ac8b_595743](https://user-images.githubusercontent.com/17789400/202909923-76706f00-37b6-4763-a4d4-7b2e1a2406f2.gif)
 
 
 ## 6. Setup and Usage Examples
