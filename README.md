@@ -2,7 +2,7 @@
 
 # Content
 - [0. MoneyLion Assessment](https://github.com/ShamsUlAzeem/MoneyLionAssessmentEndToEnd#0-moneylion-assessment)
-    - [0.1 Artifacts](https://github.com/ShamsUlAzeem/MoneyLionAssessmentEndToEnd#01-artifacts)
+    - [0.1 Demo and Artifacts](https://github.com/ShamsUlAzeem/MoneyLionAssessmentEndToEnd#01-artifacts)
     - [0.2 Server Configurations](https://github.com/ShamsUlAzeem/MoneyLionAssessmentEndToEnd#02-server-options)
         - [0.2.1 Port](https://github.com/ShamsUlAzeem/MoneyLionAssessmentEndToEnd#021-port)
         - [0.2.2 Database URL](https://github.com/ShamsUlAzeem/MoneyLionAssessmentEndToEnd#022-database-url)
@@ -26,7 +26,7 @@ This repository contains an implementation for a requested assessment.
 It will also act as a template for future projects and will continue to be maintained for development
 purpose. Please feel free to use any section of this template for your future spring boot projects.
 
-#### 0.1 Artifacts
+#### 0.1 Demo and Artifacts
 - [API Demo](https://github.com/ShamsUlAzeem/MoneyLionAssessmentEndToEnd#51-api-based)
 - [UI Demo](https://github.com/ShamsUlAzeem/MoneyLionAssessmentEndToEnd#52-ui-based)
 - [Online UI](http://ec2-13-228-30-199.ap-southeast-1.compute.amazonaws.com)
