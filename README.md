@@ -29,7 +29,6 @@ purpose. Please feel free to use any section of this template for your future sp
 #### 0.1 Demo and Artifacts
 - [API Demo](https://github.com/ShamsUlAzeem/MoneyLionAssessmentEndToEnd#51-api-based)
 - [UI Demo](https://github.com/ShamsUlAzeem/MoneyLionAssessmentEndToEnd#52-ui-based)
-- [Online UI](http://ec2-13-228-30-199.ap-southeast-1.compute.amazonaws.com)
 - [API Docs and Client Generators](https://editor.swagger.io/?url=https://raw.githubusercontent.com/ShamsUlAzeem/MoneyLionAssessmentEndToEnd/master/open-api-specification.yaml)
 - [OpenAPI YAML Specifications](open-api-specification.yaml)
 - [Download Pre-Release](https://github.com/ShamsUlAzeem/MoneyLionAssessmentEndToEnd/releases/download/v0.0.1/Assessment-0.0.1-SNAPSHOT.jar) *(Required Java 11)* Run by executing `java -jar Assessment-0.0.1-SNAPSHOT.jar` and navigate to http://localhost:8080. Later in the future, I will create native binaries without the need to install Java Development Kit or runtime
